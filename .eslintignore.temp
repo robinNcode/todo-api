@@ -1,0 +1,2 @@
+src/auth/auth.service.ts
+src/auth/strategies/jwt.strategy.ts
