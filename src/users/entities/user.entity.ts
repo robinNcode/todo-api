@@ -10,7 +10,7 @@ import { Todo } from '../../todos/entities/todo.entity';
 
 @Entity('users')
 export class User {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn({ type: 'int', unsigned: true })
   id: string;
 
   @Column({ type: 'varchar', length: 255, unique: true })

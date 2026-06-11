@@ -11,7 +11,7 @@ import { User } from '../../users/entities/user.entity';
 
 @Entity('todos')
 export class Todo {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn({ type: 'int', unsigned: true })
   id: string;
 
   @Column({ type: 'varchar', length: 255 })
@@ -23,7 +23,7 @@ export class Todo {
   @Column({ type: 'boolean', default: false })
   isCompleted: boolean;
 
-  @Column({ type: 'uuid' })
+  @Column({ type: 'int', unsigned: true })
   userId: string;
 
   @ManyToOne(() => User, (user) => user.todos, { onDelete: 'CASCADE' })
